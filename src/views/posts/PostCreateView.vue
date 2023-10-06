@@ -12,7 +12,7 @@
         <textarea class="form-control" id="contents" rows="3"></textarea>
       </div>
       <div class="pt-4">
-        <button class="btn btn-outline-dark me-2">목록</button>
+        <button class="btn btn-outline-dark me-2" @click="goListPage">목록</button>
         <button class="btn btn-primary">저장</button>
       </div>
     </form>
@@ -20,6 +20,15 @@
 </template>
 
 <script setup>
+import { useRoute, useRouter } from 'vue-router';
+
+const router = useRouter();
+const route = useRoute();
+const id = route.params.id;
+
+const goListPage = ()=>{
+  router.push({name:'PostList'})
+}
 
 </script>
 
